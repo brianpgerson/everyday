@@ -26,9 +26,7 @@ function LetterChanges(str) {
 	var strSplit = strSmall.split('');
 	
 	var newWord = [];
-	// var specialChars = [' ','!','@','#','$','%','^','&','*','(',')','-','.',',',1,2,3,4,5,6,7,8,9,0] i'm a dog
-	
-	var alphabet = ("abcdefghejklmnopqrstuvwxyz . .");
+	// var specialChars = [' ','!','@','#','$','%','^','&','*','(',')','-','.',',']
 	alphabet.split('');
 
 	for (i = 0, j = 0; i < str.length; i++) {
@@ -57,3 +55,34 @@ function LetterChanges(str) {
   	str = newWord.join('');
   	return str;      
 }
+
+
+//Define a function maxOfThree() that takes three numbers 
+//as arguments and returns the largest of them.
+
+function maxOfThree(x,y,z){
+	var champ = 0;
+	if (x > y && x > z){
+		champ = x;
+	} else if (y > x && y > z){
+		champ = y;
+	} else if (x == NaN || y == NaN || z == NaN) {
+		champ = "Not a number, dumbass";
+	} else {
+		champ = z;
+	}
+	return champ;
+} 
+
+//Write a function that takes a character 
+//(i.e. a string of length 1) and returns 
+//true if it is a vowel, false otherwise.
+
+function isVowel(string){
+	var vowels = ["aeiou"];
+	return vowels.indexOf(string.toLowerCase);
+}
+
+
+
+

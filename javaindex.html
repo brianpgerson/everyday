@@ -1,0 +1,236 @@
+<html><head>
+  <title>Learning Javascript</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+*:focus {
+    outline: none;
+}
+body {
+	background-color: #242424;
+
+}
+
+p {
+	height: 150px;
+	text-align: center;
+}
+
+#container {
+	width: 1000px;
+	height: 800px;
+	background-color: #d2d2d2;
+	margin: 0 auto;
+	position: relative;
+	overflow: auto;
+	top: 40px;
+	bottom: 40px;
+	padding: 40px;
+}
+
+#centralizer {
+	width: 840px;
+	overflow: hidden;
+	margin: 0 auto;
+
+}
+
+.middle	{
+	width:400px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 40px;
+
+}
+
+#centralizer2 {
+	width: 840px;
+	overflow: hidden;
+	margin: 0 auto;
+	background-color: #ebebeb;
+
+}
+
+#centralizer3 {
+	width: 840px;
+	overflow: hidden;
+	margin: 40px auto;
+	background-color: #af845a;
+
+}
+
+#question1 {
+	float:left;
+	width: 200px;
+	background-color: #ffffff;
+}
+
+#question2 {
+	float: left;
+	width: 200px;
+	background-color: #ebebeb;
+}
+
+#question3 {
+	width: 200px;
+	float: left;
+	background-color: #b4b4b4;
+}
+
+.buttclass {
+	width: 100px;
+	height: 100px;
+	border-radius: 200px;
+	border-style: outset;
+}
+
+#textChanger {
+	background-color: #dba571;
+	margin: 50px;
+	position: relative;
+	transition: all 1s ease-in-out;
+}
+
+#textChanger:hover {
+	transform: translate(20px, 40px) rotate(45deg) scale(2) skewX(-25deg);
+	background-color: #b4b4b4;
+}
+
+#textAppender {
+	background-color: #1a5676;
+	color: white;
+	margin: 50px;
+	position: relative;
+}
+
+#textAdder {
+	background-color: #505050;
+	color: white;
+	margin: 50px;
+	position: relative;
+}
+
+
+
+#circlediv {
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	margin: 0 auto;
+	background-color: #b75654;
+	color: white;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#circlediv p {
+	padding-top: 90px;
+	margin: 0;
+}
+
+div	{
+	font-family: Arial;
+	color: #505050;
+	margin: 40px;
+}
+
+.clear	{
+	clear: both;
+}
+
+</style>
+
+
+</head>
+<body>
+
+
+<div id="container">
+		
+<div id="centralizer">
+	<div id="question1">	
+		<div ID="bestalive"><p>I'm the best programmer that ever lived.</p></div>
+
+		<button id="textChanger" class="buttclass">Oh aaaare you???</button>
+	</div>
+
+	<div id="question2">
+		<div><p ID="dogtown">Am I also a dog?</p></div>
+
+		<button id="textAppender" class="buttclass">Click to find out!</button>
+	</div>
+
+	<div id="question3">
+		<div><p id="empty"></p></div>
+
+		<button id="textAdder" class="buttclass">Wait, you're the DOWG???</button>
+	</div>
+	
+		<div class="clear"></div>
+
+<div id="centralizer2">
+		
+		<div ID="circlediv">
+			<p>Noooo, don't click me!</p>
+		
+		</div>
+</div>
+	
+<!-- VARIABLES SECTION BELOW -->
+
+
+<div id="centralizer3">
+
+<div class="middle">
+
+	<input id="myInput" type="text" value="Why do you howl at the moon?" style="width:200px;" />
+	<br />
+	<button id="stylesChanger">Answer</button>
+	<div id="howlanswer">To speak to my brothers and sisters</div>
+
+</div>
+
+
+</div>
+</div>
+
+	<script type="text/javascript">
+
+	document.getElementById("textChanger").onclick=function() {
+		document.getElementById("bestalive").innerHTML="<p>You're the worst programmer alive!</p>";
+	}
+
+	document.getElementById("textAppender").onclick=function() {
+		document.getElementById("dogtown").innerHTML=document.getElementById("dogtown").innerHTML + " <p>Woof, woof, woof!</p>";
+	}
+
+	document.getElementById("textAdder").onclick=function() {
+		document.getElementById("empty").innerHTML="<h1>BARK!</h1>";
+	}
+
+		document.getElementById("circlediv").onclick=function() {
+		document.getElementById("circlediv").style.display="none";
+	}
+
+	/*
+	VARIABLES SECTION
+	*/
+
+	var newText=document.getElementById("myInput").value;
+
+	document.getElementById("stylesChanger").onclick=function () {
+		
+		newText=document.getElementById("myInput").value;
+
+		document.getElementById("howlanswer").innerHTML=newText;
+	}
+
+
+</script>
+
+</body>
+</html>

@@ -145,9 +145,38 @@ function FirstReverse(str) {
 }
    
 
+//Using the JavaScript language, have the function SimpleAdding(num) 
+//add up all the numbers from 1 to num. For the test cases, the parameter 
+//num will be any number from 1 to 1000. 
+
+function SimpleAdding(num){
+	var total = 0;
+	for (i = 1; i <= num; i++){
+		total += i;
+	}
+
+
+return num;
+}
 
 
 
+//Using the JavaScript language, have the function 
+//LetterCapitalize(str) take the str parameter being passed 
+//and capitalize the first letter of each word. Words will be 
+//separated by only one space. 
+function LetterCapitalize(str) { 
+	var strSplit = str.split(' ');
+	for (i = 0; i < strSplit.length; i++){
+		var temp = strSplit.pop().split('');
+		var a = temp.shift().toUpperCase();
+		temp.unshift(a);
+		strSplit.unshift(temp.join(''));
+	}
+  	
+	str = strSplit.join(' ');
+  return str;          
+}
 
 
 

@@ -20,7 +20,8 @@ return sen;
 }
 
 
-//Change a string
+//Change a string to some arbitrary bullllllshit
+
 function LetterChanges(str) { 
 	function isVowel(str){
 		var vowels = "zdhnt";
@@ -226,6 +227,150 @@ function SimpleSymbols(str){
   	str = check;
 	return str;
 }
+
+
+//Use the reduce method in combination with the concat 
+//method to “flatten” an array of arrays into a single 
+//array that has all the elements of the input arrays.
+
+var arrays = [[1,2,3], [4,5], [6]];
+
+arrays.reduce(function(a,b){
+	return a.concat(b);
+});
+
+
+function TimeConvert(num) { 
+	var hours = Math.floor(num/60);
+	var min = num%60;
+ 	var time = hours + ":" + min;
+  return time;       
+}
+   
+
+
+//take the str string parameter being passed and return 
+//the string with the letters in alphabetical order 
+//(ie. hello becomes ehllo). Assume numbers and punctuation 
+//symbols will not be included in the string. 
+
+
+//can i make it work with caps?
+function AlphabetSoup(str) { 
+	
+	var strSplit = str.split('');
+
+	var mapped = strSplit.map(function(c){
+		return c.charCodeAt();
+	});
+	var ordered = mapped.sort(function(a,b){
+		return a-b;
+	});
+	var lastStep = ordered.map(function(c){
+		return String.fromCharCode(c);
+	});
+
+	var str = lastStep.join('');
+
+  return lastStep; 
+}
+
+//see if a string with the letters "a" and "b" occur exactly 3 spaces 
+//apart from each other. True if yes, false if no.
+
+
+function ABCheck(str) {
+	var strSplit = str.split(' ');
+  
+	var check = false;
+	for (i = 0; i < strSplit.length; i++){
+		if (strSplit[i] == 'a' || strSplit[i] == 'b'){
+			if (str[i + 4] == "a" || str[i + 4] == "b" )
+				check = true;
+			if (str[i - 4] == "a" || str[i - 4] == "b" )
+				check = true;
+          	if (str[i + 2] == "a" || str[i + 2] == "b" )
+				check = false;
+			if (str[i - 2] == "a" || str[i - 2] == "b" )
+				check = false;
+           	if (str[i + 1] == "a" || str[i + 1] == "b" )
+				check = false;
+			if (str[i - 1] == "a" || str[i - 1] == "b" )
+				check = false;
+		}	
+	}
+	return check;
+
+}
+   
+
+//write two functions that mirror the 'every' and 'some' standard methods
+//that take an array as an argument and return true for the former if
+//every element in the array meets test criteria and false otherwise,
+//and for the latter, returns true is one element meets the test criteria
+function every(array, test){
+	var check = true;
+	for (i = 0; i < array.length; i++){
+		if (!test(array[i])){
+			check = false;
+		}
+	}
+	return check;
+}
+
+function some(array, test){
+	var check = false;
+		for (i = 0; i < array.length; i++){
+			if (test(array[i])){
+				check = true;
+			}
+	}
+	return check;
+}
+
+console.log(every([NaN, NaN, NaN], isNaN));
+// → true
+console.log(every([NaN, NaN, 4], isNaN));
+// → false
+console.log(some([NaN, 3, 4], isNaN));
+// → true
+console.log(some([2, 3, 4], isNaN));
+// → false
+
+
+
+//Using the JavaScript language, have the function 
+//VowelCount(str) take the str string parameter being 
+//passed and return the number of vowels the string contains 
+//(ie. "All cows eat grass" would return 5).
+
+function VowelCount(str) { 
+	var vowelCount = 0;
+	var vowels = ['a', 'e', 'i', 'o', 'u'];
+	var strSplit = str.toLowerCase().split('');
+		for (i = 0; i < strSplit.length; i++) {
+			if (vowels.indexOf(strSplit[i]) > -1) {
+				vowelCount++;
+			}
+		}
+
+  return vowelCount;       
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

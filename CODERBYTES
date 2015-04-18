@@ -20,7 +20,7 @@ return sen;
 }
 
 
-//Change a string to some arbitrary bullllllshit
+//Change a string to some arbitrary bullllllshittttt
 
 function LetterChanges(str) { 
 	function isVowel(str){

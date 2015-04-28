@@ -1,4 +1,3 @@
 # everyday
-Push something every single day of your young adult life
+Push something every single (week)day of your young adult life. Ish.
 
-Hey Keba.
